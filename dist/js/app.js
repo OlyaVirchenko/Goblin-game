@@ -34,6 +34,6 @@ export default class Game {
     return Math.floor(Math.random() * (this.fieldSize ** 2 - 1));
   }
 }
-let game1 = Game(4);
+const game1 = Game(4);
 game1.makeField();
 game1.generateRandom();
