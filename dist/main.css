@@ -17,11 +17,11 @@
     background-position: center;
 }
 
-/* .picture {
-    cursor: url('../img/hammer_icon-icons.com_71180.png'), pointer;
-    src: url('../img/goblin.png');
+.picture {
+    /*cursor: url('../img/hammer_icon-icons.com_71180.png'), pointer;*/
+    src: url(2dbd01ce16c0fa83cb67.png);
 }
-*/
+
 .board-container {
     display: flex;
     justify-content: center;
