@@ -16,3 +16,32 @@ setInterval(() => {
   }
   items[index].appendChild(picture);
 }, 1000);
+
+let strike = 0;
+let miss = 0;
+
+const strikeScore = document.querySelector('.luck');
+const missScore = document.querySelector('.fail');
+
+for (let i = 0; i < items.length; i += 1) {
+  items[i].addEventListener('click', (ev) => {
+    if (ev.target === picture) {
+      strike += 1;
+      strikeScore.textContent = strike;
+      ev.target.remove();
+    }
+
+    if (ev.target !== picture) {
+      miss += 1;
+      missScore.textContent = miss;
+    }
+
+    if (strikeScore === 5) {
+      alert('You win!!!');
+    }
+
+    if (missScore === 5) {
+      alert('You lose!!!');
+    }
+  });
+}
