@@ -17,6 +17,12 @@ let strike = 0;
 let miss = 0;
 const strikeScore = document.querySelector('.luck');
 const missScore = document.querySelector('.fail');
+function zeroingScore() {
+  strikeScore.textContent = 0;
+  strike = 0;
+  missScore.textContent = 0;
+  miss = 0;
+}
 for (let i = 0; i < items.length; i += 1) {
   items[i].addEventListener('click', ev => {
     if (ev.target === picture) {
@@ -30,9 +36,11 @@ for (let i = 0; i < items.length; i += 1) {
     }
     if (strikeScore === 5) {
       alert('You win!!!');
+      zeroingScore();
     }
     if (missScore === 5) {
       alert('You lose!!!');
+      zeroingScore();
     }
   });
 }
