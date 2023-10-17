@@ -29,18 +29,18 @@ for (let i = 0; i < items.length; i += 1) {
       strike += 1;
       strikeScore.textContent = strike;
       ev.target.remove();
+      if (strikeScore === 5) {
+        alert('You win!!!');
+        zeroingScore();
+      }
     }
     if (ev.target !== picture) {
       miss += 1;
       missScore.textContent = miss;
-    }
-    if (strikeScore === 5) {
-      alert('You win!!!');
-      zeroingScore();
-    }
-    if (missScore === 5) {
-      alert('You lose!!!');
-      zeroingScore();
+      if (missScore === 5) {
+        alert('You lose!!!');
+        zeroingScore();
+      }
     }
   });
 }
