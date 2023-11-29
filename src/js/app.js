@@ -17,40 +17,43 @@ setInterval(() => {
   items[index].appendChild(picture);
 }, 1000);
 
-let strike = 0;
-let miss = 0;
+let countHit = 0;
+let countFail = 0;
 
-const strikeScore = document.querySelector('.luck');
-const missScore = document.querySelector('.fail');
+const luckScore = document.querySelector('.luck');
+const failScore = document.querySelector('.fail');
 
-function zeroingScore() {
-  strikeScore.textContent = 0;
-  strike = 0;
-  missScore.textContent = 0;
-  miss = 0;
+function zeroingOut() {
+  luckScore.textContent = 0;
+  countHit = 0;
+  failScore.textContent = 0;
+  countFail = 0;
 }
 
-for (let i = 0; i < items.length; i += 1) {
-  items[i].addEventListener('click', (ev) => {
-    if (ev.target === picture) {
-      strike += 1;
-      strikeScore.textContent = strike;
-      ev.target.remove();
-
-      if (strikeScore === 5) {
-        alert('You win!!!');
-        zeroingScore();
+for (let i = 0; i < items.length; i++) {
+  items[i].addEventListener(
+    'click',
+    (ev) => {
+      if (ev.target === picture) {
+        countHit++;
+        luckScore.textContent = countHit;
+        ev.target.remove();
       }
-    }
 
-    if (ev.target !== picture) {
-      miss += 1;
-      missScore.textContent = miss;
-
-      if (missScore === 5) {
-        alert('You lose!!!');
-        zeroingScore();
+      if (ev.target !== picture) {
+        countFail++;
+        failScore.textContent = countFail;
       }
-    }
-  });
+
+      if (countHit === 5) {
+        alert('You win !');
+        zeroingOut();
+      }
+
+      if (countFail === 5) {
+        alert('You lose !');
+        zeroingOut();
+      }
+    },
+  );
 }

@@ -12,13 +12,11 @@
 .el {
     height: 120px;
     width: 120px;
-    /*background-image: url(../img/doorhole.png);*/
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .picture {
-    /*cursor: url('../img/hammer_icon-icons.com_71180.png'), pointer;*/
     src: url('../img/goblin.png');
 }
 
